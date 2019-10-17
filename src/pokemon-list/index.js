@@ -68,8 +68,6 @@ class PokemonList extends Component {
     }
 
     fetchMoreData = () => {
-        // a fake async api call like which sends
-        // 20 more records in 1.5 secs
         if (this.state.pokemons.length <= 964) {
             setTimeout(() => {
                 let dataExtra = this.getExtraData((this.state.pokemons.length+30));
@@ -86,8 +84,6 @@ class PokemonList extends Component {
                         });   
                     });     
                 });
-                console.log('-------------------');
-                console.log(this.state.imagenes);
             }, 1500);
         } else {
             this.setState({
