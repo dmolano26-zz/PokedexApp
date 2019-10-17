@@ -2,9 +2,9 @@
     background-image: linear-gradient(#fff, #CBDEFE);
     font-size: calc(10px + 2vmin);
     color: black;
-    padding: 10px 10px 10px 10px;
+    padding: 50px 10px 10px 10px;
     overflow: auto;
-    height:98vh;
+    height:93vh;
 }
 
 .Pokemon-card {
@@ -15,9 +15,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 15vw;
-    min-height: 25vh;
-    margin: 10px;
+    min-width: 12vw;
+    min-height: 20vh;
+    margin: 20px;
 }
 
 .List {
@@ -47,5 +47,10 @@
   
   .App-link {
     color: #09d3ac;
+  }
+
+  .Contenedor-list {
+    margin-left: 50px;
+    margin-top: 50px;
   }
   

@@ -35,7 +35,19 @@ class PokemonDetail extends React.Component {
                 </div>
             )
         } else {
-            return <p className="text-center">Escoja un pokemon.</p>
+            return (
+                <div className="Detail-container">
+                    <div className="Pokemon-detail-pikachu">
+                        <div className="Detail-img">
+                            <img key={1} src="pikachu.png" className="imagen-pikachu" alt="Encuentra un Pokémon"/>
+                        </div>
+
+                        <div className="Detail-body">
+                            <h1>Selecciona un Pokémon para ver sus caracteristicas.</h1>
+                        </div>
+                    </div>
+                </div>
+            )
         }
     }
 
