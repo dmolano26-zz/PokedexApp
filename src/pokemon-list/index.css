@@ -1,0 +1,6 @@
+.Component-container {
+    background-color: #FFF;
+    font-size: calc(10px + 2vmin);
+    color: black;
+    padding: 10px 10px 10px 10px;
+}
