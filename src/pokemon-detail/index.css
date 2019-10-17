@@ -1,0 +1,21 @@
+.Detail-container {
+    background-image: linear-gradient(#fff, #CBDEFE);
+    font-size: calc(10px + 2vmin);
+    color: black;
+    padding: 10px 10px 10px 10px;
+    height:98vh;
+    width: 46vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Pokemon-detail {
+    border: 1px solid white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

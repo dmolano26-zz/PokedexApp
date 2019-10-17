@@ -21,12 +21,7 @@ class App extends React.Component {
   render() {
     if (this.state.pokemons.length > 0) {
       return (
-        <div className="row container">
-          <div className="col-md-8 App-container">
-            <PokemonList listado={this.state.pokemons} />
-          </div>
-          <div className="col-md-4"></div>
-        </div>
+        <PokemonList listado={this.state.pokemons} />
       )
     } else {
       return <p className="text-center">Cargando Pokemons...</p>
