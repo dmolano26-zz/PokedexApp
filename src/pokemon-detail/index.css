@@ -3,8 +3,8 @@
     font-size: calc(10px + 2vmin);
     color: black;
     padding: 10px 10px 10px 10px;
-    height:98vh;
-    width: 46vw;
+    height:93vh;
+    width: 38vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,4 +18,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.Pokemon-detail-pikachu {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-pikachu {
+    width: 20vw;
+    height: 40vh;
 }
