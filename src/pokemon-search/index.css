@@ -1,0 +1,7 @@
+.Search-container {
+    height: 100px;
+    width: 33.3vw;
+    z-index: 999;
+    overflow-x: auto;
+    overflow-y: scroll;
+}
