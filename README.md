@@ -2,6 +2,7 @@ Proyecto realizado para la prueba de Capmotion
 
 ## Desarrollador
 Diego Fernando Molano 
+
 [Perfil Web](https://dmolano26.github.io/)
 
 [LinkedIn](https://www.linkedin.com/in/dmolano26/)
