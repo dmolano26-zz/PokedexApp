@@ -12,7 +12,6 @@ class PokemonDetail extends React.Component {
                         <div className="Detail-img">
                             <img key={this.props.pokemon.id} src={this.props.pokemon.image} className="imagen-pokemon" alt={this.props.pokemon.name}/>
                         </div>
-
                         <div className="Detail-body">
                             <h3><b>ID: </b>{this.props.pokemon.id}</h3>
                             <h3><b>Name: </b>{this.props.pokemon.name}</h3>

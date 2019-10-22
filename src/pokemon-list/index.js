@@ -104,6 +104,14 @@ class PokemonList extends Component {
         let order = this.state.dataFiltered.sort((a, b) => (a.id > b.id) ? 1 : -1);
         this.state.dataFiltered = order
     }
+
+    callbackFunction = (childData) => {        
+        childData.then((data) => {
+            this.setState({
+                pokemon: {'id': data.id, 'name': data.name, 'types': data.types, 'abilities': data.abilities, 'image': data.image}
+            });
+        });        
+    }
     
     render() {
         this.organizeData();
@@ -133,7 +141,7 @@ class PokemonList extends Component {
                 </div>
                 <div className="col-md-4 Contenedor-list">
                     <div className="row">
-                        <PokemonSearch/>
+                        <PokemonSearch pokemon={this.callbackFunction}/>
                         <PokemonDetail pokemon={this.state.pokemon}/>
                     </div>
                     

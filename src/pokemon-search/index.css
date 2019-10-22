@@ -1,7 +1,28 @@
 .Search-container {
-    height: 100px;
+    height: 50px;
     width: 33.3vw;
     z-index: 999;
     overflow-x: auto;
     overflow-y: scroll;
 }
+
+.Empty-container {
+    height: 50px;
+    line-height: 60%;
+    width: 33.3vw;
+    z-index: 999;
+}
+
+.Pokemon-pointer {
+    cursor: pointer;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
