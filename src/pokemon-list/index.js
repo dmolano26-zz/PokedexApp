@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import './index.css';
 import PokemonDetail from '../pokemon-detail';
 import InfiniteScroll from "react-infinite-scroll-component";
+import PokemonSearch from '../pokemon-search';
 
 
 class PokemonList extends Component {
@@ -9,7 +10,7 @@ class PokemonList extends Component {
         super(props);
         this.state = { 
             pokemons: [],
-            imagenes: [], 
+            dataFiltered: [], 
             pokemon: {},
             hasMore: true
         }        
@@ -38,7 +39,7 @@ class PokemonList extends Component {
                 })
                 .then((data) => {   
                     this.setState(prevState => ({
-                        imagenes: [...prevState.imagenes, {"id": data.id, "name": data.name, "types": data.types, "abilities": data.abilities, "image": data.sprites.front_default, "url": item.url}]
+                        dataFiltered: [...prevState.dataFiltered, {"id": data.id, "name": data.name, "types": data.types, "abilities": data.abilities, "image": data.sprites.front_default, "url": item.url}]
                       }))
                                        
                 });   
@@ -79,7 +80,7 @@ class PokemonList extends Component {
                         })
                         .then((data) => { 
                             this.setState({
-                                imagenes: this.state.imagenes.concat({"id": data.id, "name": data.name, "types": data.types, "abilities": data.abilities, "image": data.sprites.front_default, "url": item.url})
+                                dataFiltered: this.state.dataFiltered.concat({"id": data.id, "name": data.name, "types": data.types, "abilities": data.abilities, "image": data.sprites.front_default, "url": item.url})
                             });                  
                         });   
                     });     
@@ -100,8 +101,16 @@ class PokemonList extends Component {
     }    
 
     organizeData() {
-        let order = this.state.imagenes.sort((a, b) => (a.id > b.id) ? 1 : -1);
-        this.state.imagenes = order
+        let order = this.state.dataFiltered.sort((a, b) => (a.id > b.id) ? 1 : -1);
+        this.state.dataFiltered = order
+    }
+
+    callbackFunction = (childData) => {        
+        childData.then((data) => {
+            this.setState({
+                pokemon: {'id': data.id, 'name': data.name, 'types': data.types, 'abilities': data.abilities, 'image': data.image}
+            });
+        });        
     }
     
     render() {
@@ -120,7 +129,7 @@ class PokemonList extends Component {
                             scrollableTarget="scrollableDiv"
                         >
                         <div className="row List">
-                        {this.state.imagenes.map((item, index) =>
+                        {this.state.dataFiltered.map((item, index) =>
                             <div key={index} className="Pokemon-card" onClick={this.cargarPokemon.bind(this, item.id, item.name, item.types, item.abilities, item.image)}>
                                 <img src={item.image} alt="item.name"/>
                             </div>
@@ -131,7 +140,11 @@ class PokemonList extends Component {
                 </div>
                 </div>
                 <div className="col-md-4 Contenedor-list">
-                    <PokemonDetail pokemon={this.state.pokemon}/>
+                    <div className="row">
+                        <PokemonSearch pokemon={this.callbackFunction}/>
+                        <PokemonDetail pokemon={this.state.pokemon}/>
+                    </div>
+                    
                 </div>
             </div>
         )
