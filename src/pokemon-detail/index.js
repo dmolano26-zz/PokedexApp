@@ -2,10 +2,14 @@ import React from 'react';
 import './index.css'
 
 class PokemonDetail extends React.Component {
+    /* Autor: Diego Molano
+     * Fecha: Oct-2019
+     * Descripción: Componente encargado de renderizar la información
+     *              del Pokémon seleccionado
+     */
     
     render() {
-        if (this.props.pokemon.id > 0) {
-            
+        if (this.props.pokemon.id > 0) {            
             return (
                 <div className="Detail-container">
                     <div className="Pokemon-detail">
@@ -49,7 +53,6 @@ class PokemonDetail extends React.Component {
             )
         }
     }
-
 }
 
 export default PokemonDetail;
